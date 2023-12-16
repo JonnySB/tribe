@@ -1,5 +1,5 @@
-How to install:
+What is this project about?
 
-Project contents:
+How to install?
 
-Skills demonstrated:
+Project contents / skills demonstrated?
