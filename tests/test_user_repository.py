@@ -5,7 +5,7 @@ from lib.user_repository import UserRepository
 # When I call the method UserRepository#all
 # A list of all users is returned
 def test_get_all(db_connection):
-    db_connection.seed("seeds/chitter.sql")
+    db_connection.seed("seeds/tribe.sql")
     user_repository = UserRepository(db_connection)
     rows = user_repository.all()
 
@@ -25,7 +25,7 @@ def test_get_all(db_connection):
 # A new record is created in the database
 # And a user object with updated ID is returned
 def test_create_user(db_connection):
-    db_connection.seed("seeds/chitter.sql")
+    db_connection.seed("seeds/tribe.sql")
     user_repository = UserRepository(db_connection)
 
     user = User(None, "test@example.com", "password", "Joe blogs", "joe-the-blog")

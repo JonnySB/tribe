@@ -2,10 +2,10 @@ from playwright.sync_api import Page, expect
 import pytest
 
 
-# Test get all peeps
-def test_get_all_peeps(page, test_web_address, db_connection):
-    db_connection.seed("seeds/chitter.sql")
-    page.goto(f"http://{test_web_address}/peeps/all")
+# Test get all chants
+def test_get_all_chants(page, test_web_address, db_connection):
+    db_connection.seed("seeds/tribe.sql")
+    page.goto(f"http://{test_web_address}/chants/all")
 
     messages = page.locator("p.message")
 
@@ -60,8 +60,8 @@ def test_get_all_peeps(page, test_web_address, db_connection):
 
 
 def test_link_to_add_user(page, test_web_address, db_connection):
-    db_connection.seed("seeds/chitter.sql")
-    page.goto(f"http://{test_web_address}/peeps/all")
+    db_connection.seed("seeds/tribe.sql")
+    page.goto(f"http://{test_web_address}/chants/all")
     page.click("text='Add new user'")
 
     page.fill("input[name=email]", "tomj@exaple.com")

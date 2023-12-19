@@ -1,26 +1,26 @@
-from lib.peep import Peep
+from lib.chant import Chant
 from lib.user import User
 
 
-class PeepRepository:
+class ChantRepository:
     def __init__(self, connection):
         self._connection = connection
 
-    # When this method is called, all peeps are returned as peep objects
+    # When this method is called, all chants are returned as chant objects
     def all(self):
         rows = self._connection.execute(
-            "SELECT peeps.id AS peep_id, message, date_created, "
+            "SELECT chants.id AS chant_id, message, date_created, "
             "users.id AS user_id, email, password, name, username "
-            "FROM peeps "
-            "LEFT OUTER JOIN users ON peeps.user_id = users.id "
+            "FROM chants "
+            "LEFT OUTER JOIN users ON chants.user_id = users.id "
             "ORDER BY date_created DESC;"
         )
-        peep_user_list = []
+        chant_user_list = []
         for row in rows:
-            peep_user_list.append(
+            chant_user_list.append(
                 [
-                    Peep(
-                        row["peep_id"],
+                    Chant(
+                        row["chant_id"],
                         row["message"],
                         row["date_created"],
                         row["user_id"],
@@ -35,4 +35,4 @@ class PeepRepository:
                 ]
             )
 
-        return peep_user_list
+        return chant_user_list

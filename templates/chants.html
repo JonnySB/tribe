@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>All Peeps</title>
+    <title>All Chants</title>
     <meta charset="utf-8" />
   </head>
   <body>
-    <div><a href="/peep/add">Add new peep</a></div>
+    <div><a href="/chant/add">Add new chant</a></div>
     <div><a href="/users/get_new_user" class="add-user">Add new user</a></div>
 
-    {% for peep, user in peeps %}
+    {% for chant, user in chants %}
     <div>
-      <p class="message">{{peep.message}}</p>
-      <p class="date-created">{{peep.date_created}}</p>
+      <p class="message">{{chant.message}}</p>
+      <p class="date-created">{{chant.date_created}}</p>
       <p class="author-username">{{user.username}}</p>
       <br />
       <br />

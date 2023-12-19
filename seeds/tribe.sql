@@ -10,19 +10,12 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL UNIQUE
 );
 
-INSERT INTO users (email, password, name, username)
-VALUES
-  ('alice.smith@example.com', 'password', 'Alice Smith', 'alicesmith_23'),
-  ('bob.johnson@example.com', 'password', 'Bob Johnson', 'bobjohn89'),
-  ('elena.garcia@example.com', 'password', 'Elena Garcia', 'elenagarcia23'),
-  ('maxwell.lee@example.com', 'password', 'Maxwell Lee', 'maxwell_l'),
-  ('sophie.patel@example.com', 'password', 'Sophie Patel', 'sophiep_123');
 
-DROP TABLE IF EXISTS peeps CASCADE;
-DROP SEQUENCE IF EXISTS peeps_id_seq;
+DROP TABLE IF EXISTS chants CASCADE;
+DROP SEQUENCE IF EXISTS chants_id_seq;
 
-CREATE SEQUENCE IF NOT EXISTS peeps_id_seq;
-CREATE TABLE peeps (
+CREATE SEQUENCE IF NOT EXISTS chants_id_seq;
+CREATE TABLE chants (
     id SERIAL PRIMARY KEY,
     message VARCHAR(255),
     date_created TIMESTAMP,
@@ -32,7 +25,17 @@ CREATE TABLE peeps (
     ON DELETE CASCADE
 );
 
-INSERT INTO peeps (message, date_created, user_id)
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO jonny;
+
+INSERT INTO users (email, password, name, username)
+VALUES
+  ('alice.smith@example.com', 'password', 'Alice Smith', 'alicesmith_23'),
+  ('bob.johnson@example.com', 'password', 'Bob Johnson', 'bobjohn89'),
+  ('elena.garcia@example.com', 'password', 'Elena Garcia', 'elenagarcia23'),
+  ('maxwell.lee@example.com', 'password', 'Maxwell Lee', 'maxwell_l'),
+  ('sophie.patel@example.com', 'password', 'Sophie Patel', 'sophiep_123');
+
+INSERT INTO chants (message, date_created, user_id)
 VALUES
   ('Hello!', '2023-12-01 08:30:00', 1),
   ('Feeling great today.', '2023-12-02 09:45:00', 2),

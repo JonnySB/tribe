@@ -5,8 +5,8 @@ from psycopg.rows import dict_row
 
 
 class DatabaseConnection:
-    DEV_DATABASE_NAME = "CHITTER_test"
-    TEST_DATABASE_NAME = "CHITTER"
+    DEV_DATABASE_NAME = "TRIBE_test"
+    TEST_DATABASE_NAME = "TRIBE"
 
     def __init__(self, test_mode=False):
         self.test_mode = test_mode

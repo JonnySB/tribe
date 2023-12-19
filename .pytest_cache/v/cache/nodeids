@@ -1,0 +1,23 @@
+[
+  "tests/test_app.py::test_get_all_chants[chromium]",
+  "tests/test_app.py::test_get_all_peeps[chromium]",
+  "tests/test_app.py::test_link_to_add_user[chromium]",
+  "tests/test_chant.py::test_chant_constructor",
+  "tests/test_chant.py::test_chant_eq",
+  "tests/test_chant.py::test_chant_repr",
+  "tests/test_chant_repository.py::test_get_all_chants_with_associated_user",
+  "tests/test_db_connection.py::test_database_connection",
+  "tests/test_peep.py::test_chant_constructor",
+  "tests/test_peep.py::test_chant_eq",
+  "tests/test_peep.py::test_chant_repr",
+  "tests/test_peep.py::test_peep_constructor",
+  "tests/test_peep.py::test_peep_eq",
+  "tests/test_peep.py::test_peep_repr",
+  "tests/test_peep_repository.py::test_get_all_chants_with_associated_user",
+  "tests/test_peep_repository.py::test_get_all_peeps_with_associated_user",
+  "tests/test_user.py::test_construct_user",
+  "tests/test_user.py::test_eq",
+  "tests/test_user.py::test_repr",
+  "tests/test_user_repository.py::test_create_user",
+  "tests/test_user_repository.py::test_get_all"
+]
