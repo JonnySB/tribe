@@ -1,1 +1,3 @@
-{}
+{
+  "tests/test_app.py::test_link_to_add_user[chromium]": true
+}

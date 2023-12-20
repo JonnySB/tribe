@@ -4,9 +4,14 @@ from lib.database_connection import get_flask_database_connection
 from lib.chant_repository import ChantRepository
 from lib.user_repository import UserRepository
 from lib.user import User
+from flask_wtf.csrf import CSRFProtect
+
 
 # Create a new Flask app
 app = Flask(__name__)
+app.config.update(SECRET_KEY="secret_key")
+csrf = CSRFProtect()
+csrf.init_app(app)
 
 
 @app.route("/chants/all", methods=["GET"])
@@ -35,7 +40,7 @@ def add_user_to_db():
     user = User(None, email, password, name, username)
 
     user_repository.add(user)
-    return redirect("chants/all")
+    return redirect("/chants/all")
 
 
 if __name__ == "__main__":
