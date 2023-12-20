@@ -10,7 +10,7 @@ class ChantRepository:
     def all(self):
         rows = self._connection.execute(
             "SELECT chants.id AS chant_id, message, date_created, "
-            "users.id AS user_id, email, password, name, username "
+            "users.id AS user_id, email, password_hash, name, username "
             "FROM chants "
             "LEFT OUTER JOIN users ON chants.user_id = users.id "
             "ORDER BY date_created DESC;"
@@ -28,7 +28,7 @@ class ChantRepository:
                     User(
                         row["user_id"],
                         row["email"],
-                        row["password"],
+                        row["password_hash"],
                         row["name"],
                         row["username"],
                     ),

@@ -15,7 +15,7 @@ class UserRepository:
                 User(
                     row["id"],
                     row["email"],
-                    row["password"],
+                    row["password_hash"],
                     row["name"],
                     row["username"],
                 )
@@ -27,9 +27,9 @@ class UserRepository:
     # And a user object with updated ID is returned
     def add(self, user):
         rows = self._connection.execute(
-            "INSERT INTO users (email, password, name, username) \
+            "INSERT INTO users (email, password_hash, name, username) \
             VALUES (%s, %s, %s, %s) RETURNING id;",
-            [user.email, user.password, user.name, user.username],
+            [user.email, user.password_hash, user.name, user.username],
         )
         user.id = rows[0]["id"]
         return user

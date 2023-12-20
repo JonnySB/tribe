@@ -5,7 +5,7 @@ CREATE SEQUENCE IF NOT EXISTS user_id_seq;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
     name VARCHAR(50) NOT NULL,
     username VARCHAR(50) NOT NULL UNIQUE
 );
@@ -25,9 +25,7 @@ CREATE TABLE chants (
     ON DELETE CASCADE
 );
 
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO jonny;
-
-INSERT INTO users (email, password, name, username)
+INSERT INTO users (email, password_hash, name, username)
 VALUES
   ('alice.smith@example.com', 'password', 'Alice Smith', 'alicesmith_23'),
   ('bob.johnson@example.com', 'password', 'Bob Johnson', 'bobjohn89'),
