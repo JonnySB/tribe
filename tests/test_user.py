@@ -1,4 +1,4 @@
-from passlib.hash import bcrypt
+import bcrypt
 from lib.user import User
 
 
@@ -9,9 +9,14 @@ def test_construct_user():
 
     assert user.id == 1
     assert user.email == "test@example.com"
-    assert bcrypt.verify("password123", user.password_hash)
+    assert bcrypt.checkpw("password123".encode("utf-8"), user.password_hash)
     assert user.name == "Joe Blogs"
     assert user.username == "joey-the-blog"
+
+
+def test_is_password():
+    user = User(1, "test@example.com", "password123", "Joe Blogs", "joey-the-blog")
+    assert user.is_password("password123")
 
 
 def test_eq():

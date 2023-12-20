@@ -1730,3 +1730,163 @@ LINE 1: ...essage, date_created, users.id AS user_id, email, password_h...
 127.0.0.1 - - [19/Dec/2023 16:26:53] "GET /users/get_new_user HTTP/1.1" 200 -
 127.0.0.1 - - [19/Dec/2023 16:26:53] "[32mPOST /users/add_user HTTP/1.1[0m" 302 -
 127.0.0.1 - - [19/Dec/2023 16:26:53] "[33mGET /users/chants/all HTTP/1.1[0m" 404 -
+@@__xproc_block_delimiter__@@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:4677
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 716-223-509
+127.0.0.1 - - [20/Dec/2023 14:15:40] "GET /chants/all HTTP/1.1" 200 -
+@@__xproc_block_delimiter__@@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:4580
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 716-223-509
+127.0.0.1 - - [20/Dec/2023 14:15:45] "GET /chants/all HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 14:15:45] "GET /users/get_new_user HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 14:15:45] "[35m[1mPOST /users/add_user HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1458, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/code/projects/tribe/app.py", line 37, in add_user_to_db
+    user_repository.add(user)
+  File "/home/jonny/code/projects/tribe/lib/user_repository.py", line 29, in add
+    rows = self._connection.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/code/projects/tribe/lib/database_connection.py", line 42, in execute
+    cursor.execute(query, params)
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/psycopg/cursor.py", line 737, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(tomj@exaple.com) already exists.
+@@__xproc_block_delimiter__@@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:4394
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 716-223-509
+127.0.0.1 - - [20/Dec/2023 15:00:30] "GET /chants/all HTTP/1.1" 200 -
+@@__xproc_block_delimiter__@@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:4853
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 716-223-509
+127.0.0.1 - - [20/Dec/2023 15:00:34] "GET /chants/all HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 15:00:34] "GET /users/get_new_user HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 15:00:35] "[35m[1mPOST /users/add_user HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1458, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/code/projects/tribe/app.py", line 37, in add_user_to_db
+    user_repository.add(user)
+  File "/home/jonny/code/projects/tribe/lib/user_repository.py", line 29, in add
+    rows = self._connection.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/code/projects/tribe/lib/database_connection.py", line 42, in execute
+    cursor.execute(query, params)
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/psycopg/cursor.py", line 737, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(tomj@exaple.com) already exists.
+127.0.0.1 - - [20/Dec/2023 15:00:35] "GET /users/add_user?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 15:00:35] "GET /users/add_user?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+@@__xproc_block_delimiter__@@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:4492
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 716-223-509
+127.0.0.1 - - [20/Dec/2023 15:03:14] "GET /chants/all HTTP/1.1" 200 -
+@@__xproc_block_delimiter__@@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:4676
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 716-223-509
+127.0.0.1 - - [20/Dec/2023 15:03:19] "GET /chants/all HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 15:03:19] "GET /users/get_new_user HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 15:03:20] "[35m[1mPOST /users/add_user HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1458, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/code/projects/tribe/app.py", line 37, in add_user_to_db
+    user_repository.add(user)
+  File "/home/jonny/code/projects/tribe/lib/user_repository.py", line 29, in add
+    rows = self._connection.execute(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jonny/code/projects/tribe/lib/database_connection.py", line 42, in execute
+    cursor.execute(query, params)
+  File "/home/jonny/.local/share/virtualenvs/tribe-2Kqy7JYK/lib/python3.11/site-packages/psycopg/cursor.py", line 737, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(tomj@exaple.com) already exists.
+127.0.0.1 - - [20/Dec/2023 15:03:20] "GET /users/add_user?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2023 15:03:20] "GET /users/add_user?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -

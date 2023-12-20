@@ -17,6 +17,7 @@
   "tests/test_peep_repository.py::test_get_all_peeps_with_associated_user",
   "tests/test_user.py::test_construct_user",
   "tests/test_user.py::test_eq",
+  "tests/test_user.py::test_is_password",
   "tests/test_user.py::test_repr",
   "tests/test_user_repository.py::test_create_user",
   "tests/test_user_repository.py::test_get_all"

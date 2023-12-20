@@ -10,7 +10,7 @@ psycopg = "*"
 pytest-xprocess = "*"
 pytest-playwright = "*"
 py = "*"
-passlib = "*"
+bcrypt = "*"
 
 [dev-packages]
 
