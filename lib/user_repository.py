@@ -33,3 +33,10 @@ class UserRepository:
         )
         user.id = rows[0]["id"]
         return user
+
+    def get_user(self, id):
+        rows = self._connection.execute("SELECT * FROM users WHERE id = %s", [id])
+        row = rows[0]
+        return User(
+            row["id"], row["email"], row["password_hash"], row["name"], row["username"]
+        )

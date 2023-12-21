@@ -27,11 +27,11 @@ CREATE TABLE chants (
 
 INSERT INTO users (email, password_hash, name, username)
 VALUES
-  ('alice.smith@example.com', 'password', 'Alice Smith', 'alicesmith_23'),
-  ('bob.johnson@example.com', 'password', 'Bob Johnson', 'bobjohn89'),
-  ('elena.garcia@example.com', 'password', 'Elena Garcia', 'elenagarcia23'),
-  ('maxwell.lee@example.com', 'password', 'Maxwell Lee', 'maxwell_l'),
-  ('sophie.patel@example.com', 'password', 'Sophie Patel', 'sophiep_123');
+  ('alice.smith@example.com', 'hashed_password_placeholder', 'Alice Smith', 'alicesmith_23'),
+  ('bob.johnson@example.com', 'hashed_password_placeholder', 'Bob Johnson', 'bobjohn89'),
+  ('elena.garcia@example.com', 'hashed_password_placeholder', 'Elena Garcia', 'elenagarcia23'),
+  ('maxwell.lee@example.com', 'hashed_password_placeholder', 'Maxwell Lee', 'maxwell_l'),
+  ('sophie.patel@example.com', 'hashed_password_placeholder', 'Sophie Patel', 'sophiep_123');
 
 INSERT INTO chants (message, date_created, user_id)
 VALUES

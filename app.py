@@ -39,8 +39,16 @@ def add_user_to_db():
 
     user = User(None, email, password, name, username)
 
-    user_repository.add(user)
-    return redirect("/chants/all")
+    user = user_repository.add(user)
+    return redirect(f"/users/user_info/{user.id}")
+
+
+@app.route("/users/user_info/<id>")
+def show_user_info(id):
+    connection = get_flask_database_connection(app)
+    user_repository = UserRepository(connection)
+    user = user_repository.get_user(id)
+    return render_template("user_info.html", user=user)
 
 
 if __name__ == "__main__":

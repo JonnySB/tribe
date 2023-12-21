@@ -45,3 +45,12 @@ def test_create_user(db_connection):
         User(5, "sophie.patel@example.com", "password", "Sophie Patel", "sophiep_123"),
         User(6, "test@example.com", "password", "Joe blogs", "joe-the-blog"),
     ]
+
+
+def test_get_user_info(db_connection):
+    db_connection.seed("seeds/tribe.sql")
+    user_repository = UserRepository(db_connection)
+    user = user_repository.get_user(2)
+    assert user == User(
+        2, "bob.johnson@example.com", "password", "Bob Johnson", "bobjohn89"
+    )

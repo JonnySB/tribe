@@ -1,5 +1,4 @@
 from playwright.sync_api import Page, expect
-import pytest
 
 
 # Test get all chants
@@ -64,9 +63,18 @@ def test_link_to_add_user(page, test_web_address, db_connection):
     page.goto(f"http://{test_web_address}/chants/all")
     page.click("text='Add new user'")
 
-    page.fill("input[name=email]", "tomj@exaple.com")
+    page.fill("input[name=email]", "tomj@example.com")
     page.fill("input[name=password]", "password")
     page.fill("input[name=name]", "Tom Jones")
     page.fill("input[name=username]", "tommy_j123")
 
     page.click("text='submit'")
+    page.screenshot(path="screenshot1.png")
+
+    email = page.locator("p.email")
+    name = page.locator("p.name")
+    username = page.locator("p.username")
+
+    expect(email).to_have_text("tomj@example.com")
+    expect(name).to_have_text("Tom Jones")
+    expect(username).to_have_text("tommy_j123")
