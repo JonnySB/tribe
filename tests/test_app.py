@@ -69,7 +69,6 @@ def test_link_to_add_user(page, test_web_address, db_connection):
     page.fill("input[name=username]", "tommy_j123")
 
     page.click("text='submit'")
-    page.screenshot(path="screenshot1.png")
 
     email = page.locator("p.email")
     name = page.locator("p.name")
